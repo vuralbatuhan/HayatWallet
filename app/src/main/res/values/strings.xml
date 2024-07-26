@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">HayatWallet</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hayat_finans_welcome"><b>Hayat Finans\'</b> a Hoşgeldiniz!</string>
+    <string name="hayat_finans_description"><b>X Dakikada</b> birbirimizi tanıyıp Hayat Finans dünyasının müşterisi olabilirsiniz</string>
+    <string name="want_customer">Müşteri Olmak İstiyorum</string>
+    <string name="customer">Müşteriyim</string>
+    <string name="Login">Giriş Yap</string>
+    <string name="forget_password">Şifremi Unuttum / Anında Şifre</string>
+    <string name="sim_block">SIM Bloke Kaldır</string>
+    <string name="or">Veya</string>
+    <string name="beCustomer">Müşteri Ol</string>
+</resources>
