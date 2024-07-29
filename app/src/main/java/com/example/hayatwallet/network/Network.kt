@@ -1,23 +1,25 @@
 package com.example.hayatwallet.network
 
+import com.example.hayatwallet.service.ServiceInterceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.create
 
 object Network {
 
     private const val BASE_URL = "https://staging-api.cusp.link"
 
-    private val interceptor: HttpLoggingInterceptor = HttpLoggingInterceptor().apply {
+    private val interceptor = HttpLoggingInterceptor().apply {
         level = HttpLoggingInterceptor.Level.BODY
     }
 
-    private val client: OkHttpClient = OkHttpClient.Builder().apply {
+    val serviceInterceptor = ServiceInterceptor()
+
+    private val client = OkHttpClient.Builder().apply {
+        addInterceptor(serviceInterceptor)
         addInterceptor(interceptor)
     }.build()
-
 
     private val retrofit: Retrofit by lazy {
         Retrofit.Builder()
