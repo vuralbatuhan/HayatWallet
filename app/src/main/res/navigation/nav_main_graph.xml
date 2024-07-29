@@ -27,5 +27,6 @@
         android:id="@+id/mainHomeFragment"
         android:name="com.example.hayatwallet.fragments.MainHomeFragment"
         android:label="fragment_main_home"
-        tools:layout="@layout/fragment_main_home" />
+        tools:layout="@layout/fragment_main_home" >
+    </fragment>
 </navigation>

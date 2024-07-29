@@ -34,46 +34,43 @@
     <Button
         android:id="@+id/buttonWantCustomer"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="55dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="28dp"
         android:layout_marginEnd="20dp"
+        android:layout_marginBottom="28dp"
         android:background="@drawable/want_customer_button_bg"
         android:clickable="true"
-        android:padding="18dp"
         android:text="@string/want_customer"
         android:textColor="@color/white"
         android:textSize="16sp"
         app:backgroundTint="@null"
+        app:layout_constraintBottom_toTopOf="@+id/buttonCustomer"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewDescription" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/buttonCustomer"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="55dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="28dp"
         android:layout_marginEnd="20dp"
+        android:layout_marginBottom="36dp"
         android:background="@drawable/customer_button_bg"
         android:clickable="true"
-        android:padding="18dp"
         android:text="@string/customer"
         android:textColor="@color/black"
         android:textSize="16sp"
         app:backgroundTint="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonWantCustomer" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="0dp"
-        android:layout_height="306dp"
+        android:layout_width="315dp"
+        android:layout_height="315dp"
         android:scaleType="centerCrop"
         android:src="@drawable/img_welcome"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
