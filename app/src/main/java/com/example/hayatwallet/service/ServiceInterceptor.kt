@@ -17,7 +17,10 @@ class ServiceInterceptor : Interceptor {
 
         Network.service.loginWithToken(APIParameter(username, password)).enqueue(object :
             Callback<HayatResponse> {
-            override fun onResponse(call: Call<HayatResponse>, response: retrofit2.Response<HayatResponse>) {
+            override fun onResponse(
+                call: Call<HayatResponse>,
+                response: retrofit2.Response<HayatResponse>
+            ) {
                 if (response.isSuccessful && response.body() != null) {
                     tokenT = response.body()!!.item.token
                     tokenT?.let {

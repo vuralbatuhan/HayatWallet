@@ -6,10 +6,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.FragmentManager
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.hayatwallet.R
+import com.example.hayatwallet.adapters.FragmentAdapter
 import com.example.hayatwallet.databinding.FragmentMainHomeBinding
 
 class MainHomeFragment : Fragment() {
@@ -30,6 +32,6 @@ class MainHomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        }
     }
+}
 

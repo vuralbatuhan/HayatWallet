@@ -1,10 +1,12 @@
 package com.example.hayatwallet.data
 
-data class HayatResponse (val item: Item)
-data class HayatResult (val item: GetItem)
+import java.io.Serializable
 
-data class APIParameter (val username: String?, val password: String?)
+data class HayatResponse (val item: Item) : Serializable
+data class HayatResult (val item: GetItem) : Serializable
 
-data class Item (val token: String, var isSuccess: Boolean )
+data class APIParameter (val username: String?, val password: String?) : Serializable
 
-data class GetItem (val userName: String, val firstName: String, val lastName: String, val phoneNumber: String, val email: String)
+data class Item (val token: String?, var isSuccess: Boolean? ) : Serializable
+
+data class GetItem(val userName: String?, val firstName: String?, val lastName: String?, val phoneNumber: String?, val email: String?) : Serializable

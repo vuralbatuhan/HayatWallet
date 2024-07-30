@@ -29,7 +29,7 @@ class WelcomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentWelcomeBinding.inflate(layoutInflater, container, false)
-        return  binding.root
+        return binding.root
 
     }
 
@@ -41,11 +41,4 @@ class WelcomeFragment : Fragment() {
         }
     }
 
-    companion object {
-        @JvmStatic
-        fun newInstance() =
-            WelcomeFragment().apply {
-
-            }
-    }
 }
