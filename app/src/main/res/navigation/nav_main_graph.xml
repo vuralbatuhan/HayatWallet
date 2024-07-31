@@ -27,14 +27,9 @@
         android:id="@+id/forTabLayoutFragment"
         android:name="com.example.hayatwallet.fragments.ForTabLayoutFragment"
         android:label="fragment_for_tab_layout"
-        tools:layout="@layout/fragment_for_tab_layout" />
-    <fragment
-        android:id="@+id/campaignFragment"
-        android:name="com.example.hayatwallet.fragments.CampaignFragment"
-        android:label="fragment_campaign"
-        tools:layout="@layout/fragment_campaign" >
+        tools:layout="@layout/fragment_for_tab_layout" >
         <action
-            android:id="@+id/action_campaignFragment_to_campaignDetailFragment"
+            android:id="@+id/action_forTabLayoutFragment_to_campaignDetailFragment"
             app:destination="@id/campaignDetailFragment" />
     </fragment>
     <fragment

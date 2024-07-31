@@ -24,7 +24,7 @@
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="OFFERS"
+            android:text="CAMPAIGNS"
             tools:layout_editor_absoluteX="125dp"
             tools:layout_editor_absoluteY="46dp"
             android:icon="@drawable/offers"/>
@@ -38,8 +38,8 @@
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewPager2"
-        android:layout_width="410dp"
-        android:layout_height="593dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/tabLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

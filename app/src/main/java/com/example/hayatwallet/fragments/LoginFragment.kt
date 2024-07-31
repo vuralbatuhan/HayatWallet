@@ -24,18 +24,19 @@ class LoginFragment : Fragment() {
 
         binding.buttonLogin.setOnClickListener {
             viewModel.loginResponse(username, password)
-        }
 
-        viewModel.userLogin.observe(viewLifecycleOwner) { response ->
-            if (response != null && response.item.isSuccess == true) {
-                SharedPreferencesHayat.saveToken(requireActivity(), response.item.token.toString())
-                val action = LoginFragmentDirections.actionLoginFragmentToForTabLayoutFragment()
-                view.findNavController().navigate(action)
-                Toast.makeText(context, "Successful", Toast.LENGTH_LONG).show()
-            } else {
-                Toast.makeText(context, "Error", Toast.LENGTH_LONG).show()
+            viewModel.userLogin.observe(viewLifecycleOwner) { response ->
+                if (response != null && response.item.isSuccess == true) {
+                    SharedPreferencesHayat.saveToken(requireActivity(), response.item.token.toString())
+                    val action = LoginFragmentDirections.actionLoginFragmentToForTabLayoutFragment()
+                    view.findNavController().navigate(action)
+                    Toast.makeText(context, "Successful", Toast.LENGTH_LONG).show()
+                } else {
+                    Toast.makeText(context, "Error", Toast.LENGTH_LONG).show()
+                }
             }
         }
+
     }
 
     override fun onCreateView(

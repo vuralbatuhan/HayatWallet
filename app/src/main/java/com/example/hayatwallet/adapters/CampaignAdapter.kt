@@ -2,10 +2,12 @@ package com.example.hayatwallet.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.hayatwallet.data.HayatCampaign
 import com.example.hayatwallet.databinding.ItemRowCampaignBinding
+import com.example.hayatwallet.fragments.ForTabLayoutFragmentDirections
 
 class CampaignAdapter(private val campaigns: MutableList<HayatCampaign>) :
     RecyclerView.Adapter<CampaignAdapter.CampaignViewHolder>() {
@@ -18,6 +20,14 @@ class CampaignAdapter(private val campaigns: MutableList<HayatCampaign>) :
             Glide.with(binding.imageViewCampaign.context).load(campaign.imageUrl).into(binding.imageViewCampaign)
 
         }
+
+        fun goDetail(campaign: HayatCampaign) {
+            binding.buttonCampaign.setOnClickListener {
+                val action = ForTabLayoutFragmentDirections.actionForTabLayoutFragmentToCampaignDetailFragment(campaign)
+                it.findNavController().navigate(action)
+            }
+        }
+
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CampaignViewHolder {
@@ -27,6 +37,7 @@ class CampaignAdapter(private val campaigns: MutableList<HayatCampaign>) :
 
     override fun onBindViewHolder(holder: CampaignViewHolder, position: Int) {
         holder.bind(campaigns[position])
+        holder.goDetail(campaigns[position])
     }
 
     override fun getItemCount(): Int = campaigns.size
@@ -36,4 +47,6 @@ class CampaignAdapter(private val campaigns: MutableList<HayatCampaign>) :
         campaigns.addAll(newCampaigns)
         notifyDataSetChanged()
     }
+
+
 }
