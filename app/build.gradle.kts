@@ -10,7 +10,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.hayatwallet"
-        minSdk = 24
+        minSdk = 28
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -58,5 +58,7 @@ dependencies {
 
     implementation("androidx.navigation:navigation-fragment-ktx:2.7.7")
     implementation("androidx.navigation:navigation-ui-ktx:2.7.7")
+
+    implementation("org.jsoup:jsoup:1.18.1")
 
 }

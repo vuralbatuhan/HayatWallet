@@ -12,7 +12,6 @@ import retrofit2.Response
 
 class LoginViewModel : ViewModel() {
     val userLogin = MutableLiveData<HayatResponse?>()
-
     fun loginResponse(username: String, password: String) {
 
         Network.service.loginWithToken(APIParameter(username, password))

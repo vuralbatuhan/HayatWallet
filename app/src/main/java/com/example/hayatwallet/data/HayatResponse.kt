@@ -10,3 +10,5 @@ data class APIParameter (val username: String?, val password: String?) : Seriali
 data class Item (val token: String?, var isSuccess: Boolean? ) : Serializable
 
 data class GetItem(val userName: String?, val firstName: String?, val lastName: String?, val phoneNumber: String?, val email: String?) : Serializable
+
+data class HayatCampaign(val title: String?, val imageUrl: String) : Serializable

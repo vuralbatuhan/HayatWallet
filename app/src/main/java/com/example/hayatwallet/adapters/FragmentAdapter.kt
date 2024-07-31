@@ -5,7 +5,7 @@ import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Lifecycle
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.example.hayatwallet.fragments.MainHomeFragment
-import com.example.hayatwallet.fragments.OffersFragment
+import com.example.hayatwallet.fragments.CampaignFragment
 import com.example.hayatwallet.fragments.ProfileFragment
 
 class FragmentAdapter(fragmentManager: FragmentManager, lifecycle: Lifecycle): FragmentStateAdapter(fragmentManager, lifecycle) {
@@ -19,7 +19,7 @@ class FragmentAdapter(fragmentManager: FragmentManager, lifecycle: Lifecycle): F
             MainHomeFragment()
         } else
             return if (position == 1) {
-            OffersFragment()
+            CampaignFragment()
         } else
             return if(position == 2) {
             ProfileFragment()
