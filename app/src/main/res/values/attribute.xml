@@ -4,4 +4,10 @@
         <attr name="title" format="string"/>
         <attr name="result" format="string"/>
     </declare-styleable>
+    <declare-styleable name="SpecialViewHomeWallet">
+        <attr name="marka" format="string"/>
+        <attr name="time" format="string"/>
+        <attr name="money" format="string"/>
+        <attr name="image" format="string"/>
+    </declare-styleable>
 </resources>

@@ -10,4 +10,5 @@
     <string name="sim_block">SIM Bloke Kaldır</string>
     <string name="or">Veya</string>
     <string name="beCustomer">Müşteri Ol</string>
+    <string name="money"><font size="22"><b>₺ 6,158</b></font><font size="14">.11</font></string>
 </resources>

@@ -31,6 +31,9 @@
         <action
             android:id="@+id/action_forTabLayoutFragment_to_campaignDetailFragment"
             app:destination="@id/campaignDetailFragment" />
+        <action
+            android:id="@+id/action_forTabLayoutFragment_to_seeAllSpendFragment2"
+            app:destination="@id/seeAllSpendFragment" />
     </fragment>
     <fragment
         android:id="@+id/campaignDetailFragment"
@@ -41,4 +44,9 @@
             android:name="hayatCampaign"
             app:argType="com.example.hayatwallet.data.HayatCampaign" />
     </fragment>
+    <fragment
+        android:id="@+id/seeAllSpendFragment"
+        android:name="com.example.hayatwallet.fragments.SeeAllSpendFragment"
+        android:label="fragment_see_all_spend"
+        tools:layout="@layout/fragment_see_all_spend" />
 </navigation>
