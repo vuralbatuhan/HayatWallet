@@ -20,12 +20,36 @@
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
-            android:id="@+id/action_loginFragment_to_mainHomeFragment"
-            app:destination="@id/mainHomeFragment" />
+            android:id="@+id/action_loginFragment_to_forTabLayoutFragment"
+            app:destination="@id/forTabLayoutFragment" />
     </fragment>
     <fragment
-        android:id="@+id/mainHomeFragment"
-        android:name="com.example.hayatwallet.fragments.MainHomeFragment"
-        android:label="fragment_main_home"
-        tools:layout="@layout/fragment_main_home" />
+        android:id="@+id/forTabLayoutFragment"
+        android:name="com.example.hayatwallet.fragments.ForTabLayoutFragment"
+        android:label="fragment_for_tab_layout"
+        tools:layout="@layout/fragment_for_tab_layout" >
+        <action
+            android:id="@+id/action_forTabLayoutFragment_to_campaignDetailFragment"
+            app:destination="@id/campaignDetailFragment" />
+        <action
+            android:id="@+id/action_forTabLayoutFragment_to_seeAllSpendFragment2"
+            app:destination="@id/seeAllSpendFragment" />
+        <action
+            android:id="@+id/action_forTabLayoutFragment_to_seeAllSpendFragment"
+            app:destination="@id/seeAllSpendFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/campaignDetailFragment"
+        android:name="com.example.hayatwallet.fragments.CampaignDetailFragment"
+        android:label="fragment_campaign_detail"
+        tools:layout="@layout/fragment_campaign_detail" >
+        <argument
+            android:name="hayatCampaign"
+            app:argType="com.example.hayatwallet.data.HayatCampaign" />
+    </fragment>
+    <fragment
+        android:id="@+id/seeAllSpendFragment"
+        android:name="com.example.hayatwallet.fragments.SeeAllSpendFragment"
+        android:label="fragment_see_all_spend"
+        tools:layout="@layout/fragment_see_all_spend" />
 </navigation>

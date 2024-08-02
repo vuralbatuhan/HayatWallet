@@ -29,23 +29,16 @@ class WelcomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentWelcomeBinding.inflate(layoutInflater, container, false)
-        return  binding.root
+        return binding.root
 
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.buttonWantCustomer.setOnClickListener {
+        binding.buttonCustomer.setOnClickListener {
             view.findNavController().navigate(R.id.action_welcomeFragment_to_loginFragment)
         }
     }
 
-    companion object {
-        @JvmStatic
-        fun newInstance() =
-            WelcomeFragment().apply {
-
-            }
-    }
 }

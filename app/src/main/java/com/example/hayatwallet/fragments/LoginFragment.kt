@@ -1,21 +1,21 @@
 package com.example.hayatwallet.fragments
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.fragment.app.viewModels
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.findNavController
 import com.example.hayatwallet.databinding.FragmentLoginBinding
-import com.example.hayatwallet.viewmodel.LoginViewModel
+import com.example.hayatwallet.sharedPreferences.SharedPreferencesHayat
+import com.example.hayatwallet.viewModels.LoginViewModel
 
 class LoginFragment : Fragment() {
 
     private lateinit var binding: FragmentLoginBinding
-    private val viewModel: LoginViewModel by viewModels()
+    private val viewModel: LoginViewModel by activityViewModels()
     private val username = "ararat2@oktein.com"
     private val password = "123456789Aa@"
 
@@ -23,28 +23,20 @@ class LoginFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.buttonLogin.setOnClickListener {
-            viewModel.loginWithToken(username, password)
-        }
+            viewModel.loginResponse(username, password)
 
-        viewModel.loginResponse.observe(viewLifecycleOwner) { response ->
-            if (response != null) {
-                Toast.makeText(context, "Login successful", Toast.LENGTH_SHORT).show()
-                // Here you can navigate or do something else
-            } else {
-                Log.e("LoginFragment", "Login failed")
-                Toast.makeText(context, "Login failed", Toast.LENGTH_SHORT).show()
+            viewModel.userLogin.observe(viewLifecycleOwner) { response ->
+                if (response != null && response.item.isSuccess == true) {
+                    SharedPreferencesHayat.saveToken(requireActivity(), response.item.token.toString())
+                    val action = LoginFragmentDirections.actionLoginFragmentToForTabLayoutFragment()
+                    view.findNavController().navigate(action)
+                    Toast.makeText(context, "Successful", Toast.LENGTH_LONG).show()
+                } else {
+                    Toast.makeText(context, "Error", Toast.LENGTH_LONG).show()
+                }
             }
         }
 
-        viewModel.userDetails.observe(viewLifecycleOwner) { userDetails ->
-            if (userDetails != null) {
-                val action = LoginFragmentDirections.actionLoginFragmentToMainHomeFragment()
-                view.findNavController().navigate(action)
-            } else {
-                Log.e("LoginFragment", "Failed to get user details")
-                Toast.makeText(context, "Failed to get user details", Toast.LENGTH_SHORT).show()
-            }
-        }
     }
 
     override fun onCreateView(
@@ -55,8 +47,4 @@ class LoginFragment : Fragment() {
         return binding.root
     }
 
-    companion object {
-        @JvmStatic
-        fun newInstance() = LoginFragment()
-    }
 }

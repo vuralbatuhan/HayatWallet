@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- res/drawable/divider.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <size android:height="0.4dp" />
+    <solid android:color="#3E7B4040" />
+</shape>
