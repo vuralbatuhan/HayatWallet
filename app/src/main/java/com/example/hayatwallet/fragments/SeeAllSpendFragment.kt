@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.hayatwallet.R
 import com.example.hayatwallet.adapters.HomeWalletAdapter
@@ -33,6 +34,13 @@ class SeeAllSpendFragment : Fragment() {
         homeWalletAdapter.updateData(myList)
         binding.recyclerViewSeeAll.layoutManager = LinearLayoutManager(requireActivity())
         binding.recyclerViewSeeAll.adapter = homeWalletAdapter
+
+        val dividerItemDecoration = DividerItemDecoration(
+            binding.recyclerViewSeeAll.context,
+            (binding.recyclerViewSeeAll.layoutManager as LinearLayoutManager).orientation
+        )
+        dividerItemDecoration.setDrawable(resources.getDrawable(R.drawable.divider_row))
+        binding.recyclerViewSeeAll.addItemDecoration(dividerItemDecoration)
     }
 
 }

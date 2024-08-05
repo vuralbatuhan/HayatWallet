@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_welcomeFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_welcomeFragment_to_loginDefinedFragment"
+            app:destination="@id/loginDefinedFragment" />
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
@@ -34,6 +37,9 @@
         <action
             android:id="@+id/action_forTabLayoutFragment_to_seeAllSpendFragment2"
             app:destination="@id/seeAllSpendFragment" />
+        <action
+            android:id="@+id/action_forTabLayoutFragment_to_seeAllSpendFragment"
+            app:destination="@id/seeAllSpendFragment" />
     </fragment>
     <fragment
         android:id="@+id/campaignDetailFragment"
@@ -49,4 +55,13 @@
         android:name="com.example.hayatwallet.fragments.SeeAllSpendFragment"
         android:label="fragment_see_all_spend"
         tools:layout="@layout/fragment_see_all_spend" />
+    <fragment
+        android:id="@+id/loginDefinedFragment"
+        android:name="com.example.hayatwallet.fragments.LoginDefinedFragment"
+        android:label="fragment_login_defined"
+        tools:layout="@layout/fragment_login_defined" >
+        <action
+            android:id="@+id/action_loginDefinedFragment_to_forTabLayoutFragment"
+            app:destination="@id/forTabLayoutFragment" />
+    </fragment>
 </navigation>

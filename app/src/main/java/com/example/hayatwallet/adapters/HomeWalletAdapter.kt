@@ -34,7 +34,6 @@ class HomeWalletAdapter (private var homeWallet: List<HomeWallet>) :
 
     override fun onBindViewHolder(holder: CampaignViewHolder, position: Int) {
        holder.bind(homeWallet[position])
-       // holder.goDetail(campaigns[position])
 
     }
 

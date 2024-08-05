@@ -13,7 +13,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.findNavController
 import com.example.hayatwallet.R
+import com.example.hayatwallet.data.HayatResult
 import com.example.hayatwallet.databinding.FragmentWelcomeBinding
+import com.example.hayatwallet.network.Network
+import com.example.hayatwallet.sharedPreferences.SharedPreferencesHayat
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class WelcomeFragment : Fragment() {
 
@@ -35,10 +41,28 @@ class WelcomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val token = SharedPreferencesHayat.getToken(requireContext())
+        checkDefinedUser(token)
 
-        binding.buttonWantCustomer.setOnClickListener {
-            view.findNavController().navigate(R.id.action_welcomeFragment_to_loginFragment)
-        }
+    }
+    fun checkDefinedUser(token: String?) {
+        Network.service.getUser("Bearer $token").enqueue(object : Callback<HayatResult> {
+            override fun onResponse(call: Call<HayatResult>, response: Response<HayatResult>) {
+                if (response.isSuccessful && response.body() != null) {
+                    binding.buttonCustomer.setOnClickListener {
+                        view?.findNavController()?.navigate(R.id.action_welcomeFragment_to_loginDefinedFragment)
+                    }
+                } else {
+                    binding.buttonCustomer.setOnClickListener {
+                        view?.findNavController()?.navigate(R.id.action_welcomeFragment_to_loginFragment)
+                    }
+                }
+            }
+
+            override fun onFailure(call: Call<HayatResult>, t: Throwable) {
+                println("yanlissss")
+            }
+        })
     }
 
 }

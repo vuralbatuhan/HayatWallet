@@ -34,6 +34,7 @@ class ForTabLayoutFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.viewPager2.isUserInputEnabled = false
         adapter = FragmentAdapter(requireActivity().supportFragmentManager, lifecycle)
         binding.viewPager2.adapter = adapter
         binding.tabLayout.addOnTabSelectedListener(object : OnTabSelectedListener {
