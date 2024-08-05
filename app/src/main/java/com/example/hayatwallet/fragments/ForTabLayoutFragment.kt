@@ -5,13 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
-import androidx.fragment.app.viewModels
-import androidx.navigation.findNavController
 import androidx.viewpager2.widget.ViewPager2
 import com.example.hayatwallet.adapters.FragmentAdapter
 import com.example.hayatwallet.databinding.FragmentForTabLayoutBinding
-import com.example.hayatwallet.viewModels.LoginViewModel
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayout.OnTabSelectedListener
 

@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.findNavController
 import com.example.hayatwallet.databinding.FragmentProfileBinding
 import com.example.hayatwallet.sharedPreferences.SharedPreferencesHayat
 import com.example.hayatwallet.viewModels.ProfileViewModel
@@ -25,6 +26,15 @@ class ProfileFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.LinearDeleteAccount.setOnClickListener {
+            val action = ForTabLayoutFragmentDirections.actionForTabLayoutFragmentToLoginFragment()
+            view.findNavController().navigate(action)
+            SharedPreferencesHayat.deletePreferences(requireActivity())
+        }
+        binding.LinearLogout.setOnClickListener{
+            val action = ForTabLayoutFragmentDirections.actionForTabLayoutFragmentToLoginDefinedFragment()
+            view.findNavController().navigate(action)
+        }
 
         val token = SharedPreferencesHayat.getToken(requireContext())
         viewModel.userDeatils(token)

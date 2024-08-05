@@ -20,4 +20,8 @@ object SharedPreferencesHayat {
     fun getToken(context: Context): String? {
         return getPreferences(context).getString(tokenLogin, null)
     }
+
+    fun deletePreferences(context: Context){
+        context.getSharedPreferences(sharedPreferencesName, Context.MODE_PRIVATE).edit().clear().commit()
+    }
 }

@@ -18,13 +18,13 @@
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="HOME"
+            android:text="ANA SAYFA"
             android:icon="@drawable/home_bottom" />
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="CAMPAIGNS"
+            android:text="KAMPANYALAR"
             tools:layout_editor_absoluteX="125dp"
             tools:layout_editor_absoluteY="46dp"
             android:icon="@drawable/offers"/>
@@ -32,7 +32,7 @@
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="PROFILE"
+            android:text="PROFIL"
             android:icon="@drawable/profile" />
     </com.google.android.material.tabs.TabLayout>
 
